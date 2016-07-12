@@ -3,9 +3,8 @@ const nodemon = require('gulp-nodemon');
 
 gulp.task('nodemon', ['build'], () => {
 
-  var started = false;
-  console.log(started);
-  var stream = nodemon({
+  let started = false;
+  const stream = nodemon({
     script: './app/bin/www',
   })
   .on('start', function() {
