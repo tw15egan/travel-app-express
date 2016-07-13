@@ -1,6 +1,5 @@
 const path = require('path');
 const express = require('express');
-const PORT = process.env.PORT || 8080;
 const ejs = require('ejs');
 
 const app = express();

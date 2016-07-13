@@ -5,9 +5,10 @@ const requireDir = require('require-dir')('./tasks');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 
-gulp.task('build', ['clean', 'styles', 'html']);
+gulp.task('build', ['clean', 'scripts', 'copyImg', 'styles', 'html']);
 
 gulp.task('watch', () => {
+  gulp.watch('app/scripts/**/*.*', ['scripts', reload]);
   gulp.watch('app/scss/**/*.scss', ['styles', reload]);
   gulp.watch('app/views/*.html', ['html', reload]);
 });
